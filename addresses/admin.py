@@ -4,14 +4,20 @@ from .models import UserAddresses
 
 @admin.register(UserAddresses)
 class UserAddressesAdmin(admin.ModelAdmin):
-    list_display = ("get_user_phone", "get_user_fullname", "country", "shire", "city")
-    list_filter = ("Country", "shire", "city")
+    list_display = (
+        "get_user_phone",
+        "get_user_fullname",
+        "country",
+        "province",
+        "city",
+    )
+    list_filter = ("country", "province", "city")
     search_fields = (
         "user__phone",
         "user__first_name",
         "user__last_name",
         "country",
-        "shire",
+        "province",
         "city",
         "postal_code",
     )
