@@ -12,6 +12,7 @@ class CustomUserAdmin(UserAdmin):
     list_filter = ("is_staff", "is_active", "is_seller")
     search_fields = ("phone", "email", "first_name", "last_name")
     ordering = ("last_name",)
+    readonly_fields = ("created_at", "updated_at")
     add_fieldsets = (
         (
             "Personal Informations",
