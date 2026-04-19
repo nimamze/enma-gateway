@@ -40,7 +40,7 @@ class CustomUserAdmin(UserAdmin):
 
     @admin.display(description="Full Name")
     def get_user_fullname(self, obj):
-        return obj.user.get_full_name()
+        return obj.get_full_name()
 
 
 admin.site.register(CustomUser, CustomUserAdmin)

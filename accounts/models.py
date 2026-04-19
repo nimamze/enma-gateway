@@ -25,7 +25,7 @@ class UserManager(BaseUserManager, SoftDeleteManager):
 
 class CustomUser(SoftDeleteModel, AbstractUser):
     email = models.EmailField(unique=True)
-    phone = models.CharField(unique=True, max_length=20)
+    phone = models.CharField(unique=True, max_length=16)
     image = models.ImageField(upload_to="users/avatars/", null=True, blank=True)
     is_seller = models.BooleanField(default=False)
     username = None
